@@ -21,8 +21,10 @@ async function handleSearch(event) {
             location.longitude
         );
 
-        console.log("Location:", location);
-        console.log("Weather:", weather);
+        renderCurrentWeather(
+            location,
+            weather
+        );
 
     } catch (error) {
         showError(error.message);

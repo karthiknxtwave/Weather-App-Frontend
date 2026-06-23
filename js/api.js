@@ -18,6 +18,7 @@ async function searchCity(city) {
 
     return {
         name: result.name,
+        country: result.country,
         latitude: result.latitude,
         longitude: result.longitude,
     };
@@ -40,7 +41,3 @@ async function getWeather(latitude, longitude) {
 
     return data;
 }
-
-getWeather(51.50853, -0.12574)
-    .then(console.log)
-    .catch(console.error);
