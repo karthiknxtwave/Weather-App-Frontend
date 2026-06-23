@@ -21,11 +21,9 @@ async function handleSearch(event) {
             location.longitude
         );
 
-        renderCurrentWeather(
-            location,
-            weather
-        );
-
+        renderCurrentWeather(location,weather);
+        renderForecast(weather);
+        renderHourlyInsights(weather);
     } catch (error) {
         showError(error.message);
     } finally {
@@ -39,3 +37,4 @@ searchForm.addEventListener(
     "submit",
     handleSearch
 );
+
