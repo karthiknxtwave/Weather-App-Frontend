@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/responsive.css">
@@ -33,102 +37,62 @@
         <main>
 
             <section class="search-section">
-                <section class="search-section">
+                <form class="search-form">
+                    <input type="text" class="city-input" placeholder="Search for a city..." />
+                    <button type="submit" class="search-btn">Search</button>
+                    <button type="button" class="clear-city-btn">Clear</button>
+                </form>
 
-                    <form class="search-form">
-                        <input type="text" class="city-input" placeholder="Search for a city..." />
+                <div class="loading-message hidden">
+                    Loading...
+                </div>
 
-                        <button type="submit">
-                            Search
-                        </button>
-                        <button type="button" class="clear-city-btn">
-                            Clear
-                        </button>
-                    </form>
-
-                    <div class="loading-message hidden">
-                        Loading...
-                    </div>
-
-                    <div class="error-message hidden">
-                    </div>
-                </section>
+                <div class="error-message hidden">
+                </div>
             </section>
 
-
             <section class="current-weather-section">
-                <section class="current-weather-section">
+                <div class="weather-card">
 
-                    <div class="weather-card">
-
-                        <div class="weather-header">
-
-                            <div>
-                                <h2 class="city-name">--</h2>
-
-                                <p class="weather-date">
-                                    --
-                                </p>
-                            </div>
-
-                            <div class="temperature-display">
-                                --
-                            </div>
-
+                    <div class="weather-header">
+                        <div>
+                            <h2 class="city-name">--</h2>
+                            <p class="weather-date">--</p>
                         </div>
-
-                        <div class="weather-condition">
-
-                            <span class="condition-icon">
-                                ☀️
-                            </span>
-
-                            <span class="condition-label">
-                                --
-                            </span>
-
-                        </div>
-
-                        <div class="weather-stats">
-
-                            <div class="stat-card">
-                                <span>Humidity</span>
-                                <strong class="humidity-value">
-                                    --
-                                </strong>
-                            </div>
-
-                            <div class="stat-card">
-                                <span>Wind</span>
-                                <strong class="wind-value">
-                                    --
-                                </strong>
-                            </div>
-
-                            <div class="stat-card">
-                                <span>Pressure</span>
-                                <strong class="pressure-value">
-                                    --
-                                </strong>
-                            </div>
-
-                        </div>
-
+                        <div class="temperature-display">--</div>
                     </div>
 
-                </section>
+                    <div class="weather-condition">
+                        <span class="condition-icon">☀️</span>
+                        <span class="condition-label">--</span>
+                    </div>
+
+                    <div class="weather-stats">
+                        <div class="stat-card">
+                            <span>Humidity</span>
+                            <strong class="humidity-value">--</strong>
+                        </div>
+                        <div class="stat-card">
+                            <span>Wind</span>
+                            <strong class="wind-value">--</strong>
+                        </div>
+                        <div class="stat-card">
+                            <span>Pressure</span>
+                            <strong class="pressure-value">--</strong>
+                        </div>
+                    </div>
+
+                </div>
             </section>
 
             <section class="forecast-section">
                 <h2>5-Day Forecast</h2>
-                <div class="forecast-list">
-                </div>
+                <div class="forecast-list"></div>
             </section>
 
             <section class="hourly-insights-section">
                 <h2>Hourly Insights</h2>
-                <div class="hourly-list">
-                </div>
+                <div class="hourly-list"></div>
             </section>
 
         </main>

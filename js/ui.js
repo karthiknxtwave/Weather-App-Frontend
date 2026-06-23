@@ -3,10 +3,12 @@ const errorMessage = document.querySelector(".error-message");
 
 function showLoading() {
     loadingMessage.classList.remove("hidden");
+    cityInput.disabled = true;
 }
 
 function hideLoading() {
     loadingMessage.classList.add("hidden");
+    cityInput.disabled = false;
 }
 
 function showError(message) {
