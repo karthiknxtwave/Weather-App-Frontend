@@ -171,12 +171,17 @@ function renderHourlyInsights(weather) {
 
     hourlyList.innerHTML = "";
 
-    const currentHour =
-        new Date().getHours();
+    const currentTime =
+        weather.current.time;
+
+    const startIndex =
+        weather.hourly.time.indexOf(
+            currentTime
+        );
 
     for (
-        let index = currentHour;
-        index < currentHour + 6;
+        let index = startIndex+1;
+        index < startIndex + 6;
         index++
     ) {
 
@@ -213,4 +218,29 @@ function renderHourlyInsights(weather) {
 
         hourlyList.appendChild(row);
     }
+}
+
+function resetUI() {
+    cityName.textContent = "--";
+    weatherDate.textContent = "--";
+
+    temperatureDisplay.textContent = "--";
+    temperatureDisplay.classList.remove(
+        "hot",
+        "mild",
+        "cold"
+    );
+
+    conditionIcon.textContent = "☀️";
+    conditionLabel.textContent = "--";
+
+    humidityValue.textContent = "--";
+    windValue.textContent = "--";
+    pressureValue.textContent = "--";
+
+    forecastList.innerHTML = "";
+
+    hourlyList.innerHTML = "";
+
+    hideError();
 }
